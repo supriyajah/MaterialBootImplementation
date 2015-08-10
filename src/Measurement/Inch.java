@@ -1,24 +1,24 @@
 
 package Measurement;
 
-public class Meter implements Measurable{
+
+public class Inch implements Measurable{
     private double quantityValue;
-    private final double conversionFactorToCm = 100;
+    private final double conversionFactorToCm = 2.54;
     
-    public Meter(){}
+    public Inch(){}
     
-    public Meter(double value){
+    public Inch(double value){
         this.quantityValue = value;
     }
     
     @Override
     public double converToCentimeters() {
         return quantityValue*conversionFactorToCm;
-    }    
-
+    }
+    
     @Override
      public Measurable convertFrom(Measurable quantity) {
-        return new Meter(quantity.converToCentimeters()/conversionFactorToCm);
-    }
-
+        return new Inch(quantity.converToCentimeters()/conversionFactorToCm);
+     }
 }

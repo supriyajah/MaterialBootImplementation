@@ -1,26 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Measurement;
 
 
-public class Centimeter extends Units{
-     private final double conversionFactorToCm = 0.01;
-
-    public Centimeter() {
-    }  
-     
-     public Centimeter(double value){
-         super(value);
-     }
-    public double getConversionFactor() {
-        return conversionFactorToCm;
+public class Centimeter implements Measurable{
+    private double quantityValue;
+    private final double conversionFactorToCm = 1;
+    
+    public Centimeter(){}
+    
+    public Centimeter(double value){
+        this.quantityValue = value;
     }
     
+    @Override
     public double converToCentimeters() {
-        return getValue();
+        return quantityValue*conversionFactorToCm;
     }
+    
+    @Override
+     public Measurable convertFrom(Measurable quantity) {
+        return new Centimeter(quantity.converToCentimeters()/conversionFactorToCm);
+    }
+     
 }

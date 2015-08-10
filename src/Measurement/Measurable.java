@@ -1,5 +1,8 @@
 package Measurement;
 
+import bootcampday1.Quantity;
+
 public interface Measurable {
-    public double converToCentimeters();
+    double converToCentimeters();
+    public Measurable convertFrom(Measurable quantity);
 }
