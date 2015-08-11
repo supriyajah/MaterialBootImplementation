@@ -2,7 +2,7 @@ package Measurement;
 
 
 
-public class Centimeter extends QuantityLength{
+public class Centimeter extends Length{
     private final double converFactorToBaseQuantity = 1;
     
     public Centimeter(){}

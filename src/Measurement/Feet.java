@@ -2,7 +2,7 @@
 package Measurement;
 
 
-public class Feet extends QuantityLength{
+public class Feet extends Length{
     private final double converFactorToBaseQuantity = 30.48;
     
     public Feet(){}

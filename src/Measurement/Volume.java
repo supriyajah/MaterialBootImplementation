@@ -10,31 +10,31 @@ package Measurement;
  *
  * @author hp-pc
  */
-public class QuantityVolume {
-     protected double quantityValue;
+public class Volume {
+    private double quantityValue;
     
-    public QuantityVolume(){}
+    public Volume(){}
     
-    public QuantityVolume(double value){
+    public Volume(double value){
         this.quantityValue = value;
     }
     
     public double convertToBaseQuantity(){
         return quantityValue*getConversionFactor();
     }
-    public QuantityVolume convertFrom(QuantityVolume quantity){
-        return this.clone((quantity.convertToBaseQuantity()/convertToBaseQuantity()));
+    public Volume convertFrom(Volume quantity){
+        return this.clone((quantity.convertToBaseQuantity()/getConversionFactor()));
     }
-    public QuantityVolume addQuantity(QuantityVolume quantity){
+    public Volume addQuantity(Volume quantity){
         return this.clone(((quantity.convertToBaseQuantity()+ this.convertToBaseQuantity())/getConversionFactor()));
     }
-    public boolean equalsTo(QuantityVolume quantity){
+    public boolean equalsTo(Volume quantity){
         return (this.convertToBaseQuantity() == quantity.convertToBaseQuantity());
     }
     public double getConversionFactor(){
         return 1;
     }   
-    public QuantityVolume clone(double value){
+    public Volume clone(double value){
         return null;
     }
 }

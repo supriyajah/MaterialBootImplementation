@@ -1,7 +1,7 @@
 
 package Measurement;
 
-public class Meter extends QuantityLength{
+public class Meter extends Length{
     private final double converFactorToBaseQuantity = 100;
     
     public Meter(){}

@@ -10,7 +10,7 @@ package Measurement;
  *
  * @author hp-pc
  */
-public class Ounce extends QuantityVolume{
+public class Ounce extends Volume{
     private final double converFactorToBaseQuantity = 6;
     
     public Ounce(){}

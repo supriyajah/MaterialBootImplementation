@@ -10,7 +10,7 @@ package Measurement;
  *
  * @author hp-pc
  */
-public class TableSpoon extends QuantityVolume{
+public class TableSpoon extends Volume{
     private final double converFactorToBaseQuantity = 3;
     
     public TableSpoon(){}

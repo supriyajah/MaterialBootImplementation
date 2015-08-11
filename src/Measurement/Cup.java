@@ -10,7 +10,7 @@ package Measurement;
  *
  * @author hp-pc
  */
-public class Cup extends QuantityVolume{
+public class Cup extends Volume{
     private final double converFactorToBaseQuantity = 48;
     
     public Cup(){}

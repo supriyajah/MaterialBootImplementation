@@ -2,7 +2,7 @@
 package Measurement;
 
 
-public class Inch extends QuantityLength{
+public class Inch extends Length{
     private final double converFactorToBaseQuantity = 2.54;
     
     public Inch(){}

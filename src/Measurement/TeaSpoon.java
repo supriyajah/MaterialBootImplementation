@@ -10,7 +10,7 @@ package Measurement;
  *
  * @author hp-pc
  */
-public class TeaSpoon extends QuantityVolume{
+public class TeaSpoon extends Volume{
     private final double converFactorToBaseQuantity = 1;
     
     public TeaSpoon(){}

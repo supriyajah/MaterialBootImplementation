@@ -1,7 +1,7 @@
 
 package Measurement;
 
-public class Yard extends QuantityLength{
+public class Yard extends Length{
     private final double converFactorToBaseQuantity = 91.44;
     
     public Yard(){}
