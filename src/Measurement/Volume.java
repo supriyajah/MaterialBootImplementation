@@ -10,7 +10,7 @@ package Measurement;
  *
  * @author hp-pc
  */
-public class Volume {
+public abstract class Volume{
     private double quantityValue;
     
     public Volume(){}
@@ -31,10 +31,6 @@ public class Volume {
     public boolean equalsTo(Volume quantity){
         return (this.convertToBaseQuantity() == quantity.convertToBaseQuantity());
     }
-    public double getConversionFactor(){
-        return 1;
-    }   
-    public Volume clone(double value){
-        return null;
-    }
+    public abstract double getConversionFactor();   
+    public abstract Volume clone(double value);
 }

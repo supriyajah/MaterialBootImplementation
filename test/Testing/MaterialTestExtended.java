@@ -86,7 +86,15 @@ public class MaterialTestExtended {
         Temperature measurableQuantity_2 = new Celsius();
         Temperature measurableQuantity_3 = measurableQuantity_2.convertFrom(measurableQuantity_1);
         
-        assertEquals(true, measurableQuantity_3.equalsTo(new Celsius(0)));
+        assertEquals(true, measurableQuantity_3.equalsTo(new Celsius(0)));        
+    }
+    
+    @Test
+    public void testWhetherCelsiusDoesntConvertToF(){
+        Temperature measurableQuantity_1 = new Fahrenheit();
+        Temperature measurableQuantity_2 = new Celsius(100);
+        Temperature measurableQuantity_3 = measurableQuantity_1.convertFrom(measurableQuantity_2);
         
+        assertEquals(true, measurableQuantity_3.equalsTo(new Fahrenheit(212)));
     }
 }
