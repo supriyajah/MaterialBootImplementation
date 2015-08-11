@@ -20,4 +20,9 @@ public class Yard implements Measurable{
     public Measurable convertFrom(Measurable quantity) {
         return new Yard(quantity.converToCentimeters()/conversionFactorToCm);
     }
+    
+    @Override
+    public Measurable addQuantity(Measurable quantity) {
+        return new Yard((quantity.converToCentimeters()+this.converToCentimeters())/conversionFactorToCm);
+    }
 }

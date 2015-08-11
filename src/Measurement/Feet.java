@@ -23,4 +23,9 @@ public class Feet implements Measurable{
      public Measurable convertFrom(Measurable quantity) {
         return new Feet(quantity.converToCentimeters()/conversionFactorToCm);
     }
+     
+    @Override
+    public Measurable addQuantity(Measurable quantity) {
+        return new Feet((quantity.converToCentimeters()+this.converToCentimeters())/conversionFactorToCm);
+    }
 }

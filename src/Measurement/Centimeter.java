@@ -21,4 +21,8 @@ public class Centimeter implements Measurable{
         return new Centimeter(quantity.converToCentimeters()/conversionFactorToCm);
     }
      
+    @Override
+     public Measurable addQuantity(Measurable quantity) {
+        return new Centimeter((quantity.converToCentimeters()+this.converToCentimeters())/conversionFactorToCm);
+    } 
 }

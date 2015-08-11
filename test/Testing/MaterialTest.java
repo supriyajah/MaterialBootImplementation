@@ -119,4 +119,31 @@ public class MaterialTest {
  
         assertEquals((new Yard(1.09361)).converToCentimeters(), quantity.convertTo(meter, yard).converToCentimeters(),0.001);  
     }
+    
+    @Test
+    public void testIfCmAddsMeterGivesCm(){
+        Quantity quantity = new Quantity();
+        Meter meter = new Meter(1);
+        Centimeter centimeter = new Centimeter(200);
+        
+        assertEquals(new Centimeter(300).converToCentimeters(), quantity.addQuantity(centimeter,meter).converToCentimeters(),0.0);
+    }
+    
+    @Test
+    public void testIfFeetAddsYardGivesFeet(){
+        Quantity quantity = new Quantity();
+        Yard yard = new Yard(1);
+        Feet feet = new Feet(3);
+        
+        assertEquals(new Feet(6).converToCentimeters(), quantity.addQuantity(feet,yard).converToCentimeters(),0.0);
+    }
+    
+    @Test
+    public void testIfInchAddsYardGivesInch(){
+        Quantity quantity = new Quantity();
+        Yard yard = new Yard(1);
+        Inch inch = new Inch(36);
+        
+        assertEquals(new Inch(72).converToCentimeters(), quantity.addQuantity(inch,yard).converToCentimeters(),0.0);
+    }
 }

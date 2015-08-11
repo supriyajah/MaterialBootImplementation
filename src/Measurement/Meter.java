@@ -17,8 +17,13 @@ public class Meter implements Measurable{
     }    
 
     @Override
-     public Measurable convertFrom(Measurable quantity) {
+    public Measurable convertFrom(Measurable quantity) {
         return new Meter(quantity.converToCentimeters()/conversionFactorToCm);
+    }
+     
+    @Override
+    public Measurable addQuantity(Measurable quantity) {
+        return new Meter((quantity.converToCentimeters()+this.converToCentimeters())/conversionFactorToCm);
     }
 
 }

@@ -21,4 +21,9 @@ public class Inch implements Measurable{
      public Measurable convertFrom(Measurable quantity) {
         return new Inch(quantity.converToCentimeters()/conversionFactorToCm);
      }
+     
+    @Override
+    public Measurable addQuantity(Measurable quantity) {
+        return new Inch((quantity.converToCentimeters()+this.converToCentimeters())/conversionFactorToCm);
+    }
 }
