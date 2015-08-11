@@ -6,10 +6,6 @@
 
 package bootcampday1;
 
-import Measurement.Centimeter;
-import Measurement.Feet;
-import Measurement.Meter;
-import Measurement.Yard;
 
 /**
  *
@@ -21,8 +17,7 @@ public class BootCampDay1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       Quantity qty = new Quantity();
-       qty.convertTo(new Centimeter(200), new Meter());
+     
     }
     
 }

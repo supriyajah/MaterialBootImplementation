@@ -2,28 +2,21 @@
 package Measurement;
 
 
-public class Inch implements Measurable{
-    private double quantityValue;
-    private final double conversionFactorToCm = 2.54;
+public class Inch extends QuantityLength{
+    private final double converFactorToBaseQuantity = 2.54;
     
     public Inch(){}
     
     public Inch(double value){
-        this.quantityValue = value;
+        super(value);
+    }
+    @Override
+    public double getConversionFactor(){
+        return converFactorToBaseQuantity;
     }
     
     @Override
-    public double converToCentimeters() {
-        return quantityValue*conversionFactorToCm;
-    }
-    
-    @Override
-     public Measurable convertFrom(Measurable quantity) {
-        return new Inch(quantity.converToCentimeters()/conversionFactorToCm);
-     }
-     
-    @Override
-    public Measurable addQuantity(Measurable quantity) {
-        return new Inch((quantity.converToCentimeters()+this.converToCentimeters())/conversionFactorToCm);
+    public Inch clone(double value){
+        return new Inch(value);
     }
 }

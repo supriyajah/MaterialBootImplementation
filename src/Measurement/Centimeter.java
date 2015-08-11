@@ -1,28 +1,25 @@
 package Measurement;
 
 
-public class Centimeter implements Measurable{
-    private double quantityValue;
-    private final double conversionFactorToCm = 1;
+
+public class Centimeter extends QuantityLength{
+    private final double converFactorToBaseQuantity = 1;
     
     public Centimeter(){}
     
     public Centimeter(double value){
-        this.quantityValue = value;
+        super(value);
     }
     
     @Override
-    public double converToCentimeters() {
-        return quantityValue*conversionFactorToCm;
+    public double getConversionFactor(){
+        return converFactorToBaseQuantity;
     }
     
     @Override
-     public Measurable convertFrom(Measurable quantity) {
-        return new Centimeter(quantity.converToCentimeters()/conversionFactorToCm);
+    public Centimeter clone(double value){
+        return new Centimeter(value);
     }
-     
-    @Override
-     public Measurable addQuantity(Measurable quantity) {
-        return new Centimeter((quantity.converToCentimeters()+this.converToCentimeters())/conversionFactorToCm);
-    } 
+
+    
 }

@@ -1,28 +1,22 @@
 
 package Measurement;
 
-public class Yard implements Measurable{
-    private double quantityValue;
-    private final double conversionFactorToCm = 91.44;
+public class Yard extends QuantityLength{
+    private final double converFactorToBaseQuantity = 91.44;
     
     public Yard(){}
     
     public Yard(double value){
-        this.quantityValue = value;
+       super(value);
     }
     
     @Override
-    public double converToCentimeters() {
-        return quantityValue*conversionFactorToCm;
-    }   
-
-    @Override
-    public Measurable convertFrom(Measurable quantity) {
-        return new Yard(quantity.converToCentimeters()/conversionFactorToCm);
+    public double getConversionFactor(){
+        return converFactorToBaseQuantity;
     }
     
     @Override
-    public Measurable addQuantity(Measurable quantity) {
-        return new Yard((quantity.converToCentimeters()+this.converToCentimeters())/conversionFactorToCm);
+    public Yard clone(double value){
+        return new Yard(value);
     }
 }

@@ -6,7 +6,7 @@ import Measurement.Measurable;
 public class Quantity {
     
     public boolean measureEqual(Measurable quantity_1,Measurable quantity_2){
-        return (quantity_1.converToCentimeters() == quantity_2.converToCentimeters());
+        return (quantity_1.convertToBaseQuantity() == quantity_2.convertToBaseQuantity());
     }
     
     public Measurable convertTo(Measurable quantity_1,Measurable quantity_2){
